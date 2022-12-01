@@ -237,7 +237,7 @@ async function signTransactionObject(transaction: Transaction, signer: Signer, a
     const signature = await signer.signMessage(message, accountId, networkId);
     const signedTx = new SignedTransaction({
         transaction,
-        signature: new Signature({ keyType: transaction.publicKey.keyType, data: signature.signature })
+        signature
     });
     return [hash, signedTx];
 }
